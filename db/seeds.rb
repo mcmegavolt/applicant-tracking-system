@@ -13,6 +13,8 @@ job2 = JobModel.create(title: 'Data Scientist', description: 'Analyze big data')
 
 application1 = ApplicationModel.create(candidate_name: 'John Doe', job: job1)
 application2 = ApplicationModel.create(candidate_name: 'Jane Smith', job: job2)
+application3 = ApplicationModel.create(candidate_name: 'Alex Pon', job: job2)
+_application4 = ApplicationModel.create(candidate_name: 'Alex Pon', job: job2)
 
 Application::Event::Interview.create(application: application1, interview_date: Time.now)
 Application::Event::Hired.create(application: application1, hire_date: Time.now)
@@ -20,6 +22,8 @@ Application::Event::Hired.create(application: application1, hire_date: Time.now)
 Application::Event::Interview.create(application: application2, interview_date: Time.now)
 Application::Event::Rejected.create(application: application2)
 Application::Event::Note.create(content: 'Some notes...', application: application2)
+
+Application::Event::Interview.create(application: application3, interview_date: Time.now)
 
 Job::Event::Activated.create(job: job1)
 Job::Event::Deactivated.create(job: job2)

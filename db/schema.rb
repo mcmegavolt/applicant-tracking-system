@@ -13,6 +13,7 @@
 ActiveRecord::Schema[7.1].define(version: 2024_05_15_044607) do
   create_table "application_events", force: :cascade do |t|
     t.integer "application_id", null: false
+    t.string "type"
     t.datetime "interview_date"
     t.datetime "hire_date"
     t.text "content"
