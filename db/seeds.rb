@@ -8,6 +8,8 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+User.create(email: 'admin@example.com', password: 'pa88w0rd', password_confirmation: 'pa88w0rd')
+
 job1 = JobModel.create(title: 'Software Engineer', description: 'Develop awesome software')
 job2 = JobModel.create(title: 'Data Scientist', description: 'Analyze big data')
 

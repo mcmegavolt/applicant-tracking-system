@@ -1,4 +1,4 @@
-class AllJobsWithStats < ApplicationService
+class JobsWithStats < ApplicationService
   def call
     ActiveRecord::Base.connection.execute(all_with_stats_query).map { |job| OpenStruct.new(job) }
   end
@@ -9,7 +9,6 @@ class AllJobsWithStats < ApplicationService
     <<-SQL
       SELECT
         j.id,
-        j.application_id,
         j.title AS name,
         CASE
           WHEN MAX(CASE WHEN e.type = 'Job::Event::Activated' THEN 1 ELSE 0 END) = 1 THEN 'activated'
