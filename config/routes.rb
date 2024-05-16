@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   resources :jobs, only: :index
+  resources :applications, only: :index
 end

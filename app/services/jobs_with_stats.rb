@@ -26,7 +26,7 @@ class JobsWithStats < ApplicationService
           SELECT
             application_id,
             type,
-            MAX(created_at) AS last_event_date
+            MAX(created_at)
           FROM
             application_events
           WHERE
